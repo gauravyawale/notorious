@@ -19,7 +19,7 @@ export const createNote = async (req, res) => {
 // get all notes for user
 
 export const getAllNotes = async (req, res) => {
-  const notes = await Note.Find({ userId: req.user._id }).sort({
+  const notes = await Note.find({ userId: req.user._id }).sort({
     createdAt: -1,
   });
   res.status(200).json({ notes });

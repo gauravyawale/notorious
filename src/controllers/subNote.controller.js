@@ -20,7 +20,7 @@ export const createSubNote = async (req, res) => {
 // get all subNotes for user
 
 export const getAllSubNotes = async (req, res) => {
-  const subNotes = await SubNote.Find({ userId: req.user._id }).sort({
+  const subNotes = await SubNote.find({ userId: req.user._id }).sort({
     createdAt: -1,
   });
   res.status(200).json({ subNotes });
